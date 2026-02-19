@@ -1,0 +1,187 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+body{
+    font-family: v.$fuente_secundaria;
+    font-weight: v.$regular;
+    background-color: v.$stone100;
+    font-size: 16px;
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    flex-direction: column;   
+}
+
+.recipe{
+    margin-top: 0;
+    background-color: v.$white;
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    padding: 1.5rem;
+
+    @include m.telefono{
+        width: 30rem;
+        margin-top: 5rem;
+    }
+
+    &__separator{
+        border-bottom: 1px solid v.$stone150;
+    }
+
+    &__image{
+        width: auto;
+        height: 15rem;
+        background-image: image-set(
+            url('../assets/images/image-omelette.jpeg') 1x
+        );
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+
+    &__header{
+        &--title{
+            font-family: v.$fuente_principal;
+            font-weight: v.$regular;
+            color: v.$stone900;
+        }
+    }
+
+    &__description{
+        color: v.$stone600;
+        font-size: .75rem;
+        font-weight: v.$regular;
+        margin-bottom: 2.5rem;
+
+        &--nutrition{
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__preparation{
+
+        background-color: v.$rose50;
+        padding: 1rem;
+        border-radius: 10px;
+
+        &--title{
+            font-weight: v.$semibold;
+            color: v.$rose800;
+        }
+
+        &--list{
+
+            color: v.$stone600;
+            font-size: .8rem;
+
+            &-element{
+                padding-left: 20px;  
+                margin-bottom: 8px; 
+                span{
+                    font-weight: v.$semibold;
+                }
+                
+            }
+
+            li::marker{
+                color: v.$rose800;
+                font-size: 0.7rem;
+                font-weight: v.$regular;
+            }
+        }
+    }
+
+    &__title{
+        font-family: v.$fuente_principal;
+        color: v.$brown800;
+        font-weight: v.$regular;
+    }
+
+    &__ingredients{
+
+        color: v.$stone600;
+        font-size: .8rem;
+
+        &--list{
+            
+            &-element{
+                padding-left: 20px;  
+                margin-bottom: 8px; 
+            }
+
+            li::marker{
+                color: v.$brown800;
+                font-size: 0.7rem;
+                font-weight: v.$regular;
+            }
+        }
+
+    }
+
+    &__instructions{
+
+        color: v.$stone600;
+        font-size: .8rem;
+
+        &--list{
+            &-element{
+                padding-left: 20px;  
+                margin-bottom: 8px; 
+                span{
+                    font-weight: v.$semibold;
+                }
+            }
+
+            li::marker{
+                color: v.$brown800;
+                font-size: 0.7rem;
+                font-weight: v.$bold;
+            }           
+        }
+    }
+
+
+    &__table{
+        width: 100%;
+        border-collapse: collapse;
+
+        &-item--tr{
+            border-bottom: 1px solid v.$stone150;
+        }
+
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        td {
+            padding: 0.5rem;
+            font-size: .75rem;
+        }
+
+        &-item--label {
+            color: v.$stone600;
+        }
+
+        &-item--value {
+            color: v.$brown800;
+            font-weight: v.$semibold;
+        }
+        
+    }
+    
+
+    
+
+}
+
+.attribution{
+    margin-bottom: 0;
+    @include m.telefono{
+        margin-bottom: 5rem;
+    }
+}
